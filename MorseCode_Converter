@@ -1,0 +1,57 @@
+#Algorithm for Converting String to Morse Code:
+
+#step 1: Ask user for a string (word, number, sentence)
+
+user_input = input("Type a word to convert it to Morse Code! \n").lower()
+
+#step 4: Write every letter equal to morse code equivalent.
+
+a = "·−"
+b = "−···"
+c = "−·−·"
+d = "−··"
+e = "·"
+f = "··−·"
+g = "−−·"
+h = "····"
+i = "··"
+j = "·−−−"
+k = "−·−"
+l = "·−··"
+m = "−−"
+n = "−·"
+o = "−−−"
+p = "·−−·"
+q = "−−·−"
+r = "·−·"
+s = "···"
+t = "−"
+u = "··−"
+v = "···−"
+w = "·−−"
+x = "−··−"
+y = "−·−−"
+z = "−−··"
+slash = "/"
+#step 5: Add all the letters to a list.
+
+letters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, slash]
+
+strings = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
+
+word_input = []
+#step 6: The user input will be matched to the letters in the list and printed.
+
+#I need the user input to match the strings and then output a different value for those strings.
+
+
+for letter in user_input:
+    if letter in strings:
+        index_value = strings.index(letter)
+        letter_location = letters[index_value]
+        word_input.append(letter_location)
+
+
+word = " ".join(word_input)
+print(word)
+
