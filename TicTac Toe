@@ -1,0 +1,37 @@
+from replit import clear
+import itertools
+import os
+import time
+from class_player import Player
+print("Play Tic Tac Toe & Get 3 in a Row!")
+title = print("Type in the row number first followed by the column number, ex: 12:")
+row1 = [" ", "-", "-", "-"]
+row2 = [" ", "-", "-", "-"]
+row3 = [" ", "-", "-", "-"]
+print("  ".join(row1))
+print("  ".join(row2))
+print("  ".join(row3))
+
+
+character_1 = "X"
+character_2 = "O"
+
+
+Game_on = True
+while Game_on:
+    player_1_input = int(input("\nPlayer 1: "))
+    player_1 = Player(player_1_input, character_1)
+    while player_1.movement() is False:
+        player_1_input = int(input("\nPlayer 1: "))
+        player_1 = Player(player_1_input, character_1)
+    if player_1.empty_board("Player 1"):
+        Game_on = False
+        break
+    player_2_input = int(input("\nPlayer 2: "))
+    player_2 = Player(player_2_input, character_2)
+    while player_2.movement() is False:
+        player_2_input = int(input("\nPlayer 2: "))
+        player_2 = Player(player_2_input, character_2)
+    if player_2.empty_board("Player 2"):
+        Game_on = False
+        break
